@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/textoProgresso"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:textColor="#FFF0E2C4" />
+
+            <Button
+                android:id="@+id/botaoSairJogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sair"
+                android:textSize="12sp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:background="@drawable/bg_alternativa"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textoPergunta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#FFF0E2C4"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/botaoA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_alternativa"
+            android:textColor="#FF2B1E0E"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/botaoB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_alternativa"
+            android:textColor="#FF2B1E0E"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/botaoC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_alternativa"
+            android:textColor="#FF2B1E0E"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/botaoD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_alternativa"
+            android:textColor="#FF2B1E0E"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/botaoProxima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Próxima"
+            android:background="@drawable/bg_alternativa"
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

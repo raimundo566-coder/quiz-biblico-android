@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Niveis e VIP"
+            android:textSize="22sp"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/botaoTornarVip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tornar-se VIP - R$ 9,90 (libera tudo)"
+            android:backgroundTint="#FFFFFFFF"
+            android:textColor="#FF000000"
+            android:layout_marginBottom="24dp" />
+
+        <LinearLayout
+            android:id="@+id/containerNiveisVip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/botaoVoltarNiveisVip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voltar"
+            android:backgroundTint="#FFFFFFFF"
+            android:textColor="#FF000000" />
+
+    </LinearLayout>
+</ScrollView>

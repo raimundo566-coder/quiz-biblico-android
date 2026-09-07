@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="272dp"
+            android:layout_height="158dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="4dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_biblia_luz" />
+
+        <TextView
+            android:id="@+id/textoTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="2dp"
+            android:text="Quiz Bíblico"
+            android:textColor="@color/qb_dourado"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textoStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="28dp"
+            android:textColor="@color/qb_texto_claro"
+            android:textSize="13sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botaoSolo"
+                style="@style/Widget.QuizBiblico.BotaoMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="56dp"
+                android:paddingEnd="56dp"
+                android:text="MODO SOLO" />
+
+            <ImageView
+                android:layout_width="105dp"
+                android:layout_height="74dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_soldado" />
+
+            <ImageView
+                android:layout_width="118dp"
+                android:layout_height="76dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_anciao" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botaoGincana"
+                style="@style/Widget.QuizBiblico.BotaoMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="56dp"
+                android:paddingEnd="56dp"
+                android:text="GINCANA (em breve)"
+                app:backgroundTint="@color/qb_verde_gincana" />
+
+            <ImageView
+                android:layout_width="107dp"
+                android:layout_height="58dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_trio_criancas" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/botaoNiveis"
+                style="@style/Widget.QuizBiblico.BotaoMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="56dp"
+                android:paddingEnd="56dp"
+                android:text="NÍVEIS / VIP"
+                app:backgroundTint="@color/qb_vinho_vip" />
+
+            <ImageView
+                android:layout_width="92dp"
+                android:layout_height="58dp"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_vip_pulpito" />
+
+            <ImageView
+                android:layout_width="133dp"
+                android:layout_height="73dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_vip_coroa" />
+
+        </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/botaoSair"
+            style="@style/Widget.QuizBiblico.BotaoMenu"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="SAIR"
+            app:backgroundTint="@color/qb_cinza_sair" />
+
+    </LinearLayout>
+</ScrollView>

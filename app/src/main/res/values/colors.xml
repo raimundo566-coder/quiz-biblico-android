@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="qb_azul_botao">#1F3B4D</color>
+    <color name="qb_verde_gincana">#4A5D4E</color>
+    <color name="qb_vinho_vip">#800020</color>
+    <color name="qb_cinza_sair">#333333</color>
+    <color name="qb_dourado">#D4AF37</color>
+    <color name="qb_texto_claro">#EFE0CA</color>
+    <color name="qb_branco">#FFFFFF</color>
+    <color name="qb_fundo_dialogo">#2A2018</color>
+</resources>

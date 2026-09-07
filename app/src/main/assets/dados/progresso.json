@@ -1,0 +1,45 @@
+{
+  "porChave": {
+    "1|LIVRO|APOCALIPSE": {
+      "idsRespondidos": [
+        131027,
+        131010,
+        131013,
+        131028,
+        131014,
+        131033,
+        131032,
+        131005,
+        131023,
+        131006
+      ],
+      "acertos": 2,
+      "erros": 8
+    },
+    "2|LIVRO|APOCALIPSE": {
+      "idsRespondidos": [],
+      "acertos": 0,
+      "erros": 0
+    },
+    "3|LIVRO|APOCALIPSE": {
+      "idsRespondidos": [],
+      "acertos": 0,
+      "erros": 0
+    },
+    "4|LIVRO|APOCALIPSE": {
+      "idsRespondidos": [],
+      "acertos": 0,
+      "erros": 0
+    },
+    "5|LIVRO|APOCALIPSE": {
+      "idsRespondidos": [],
+      "acertos": 0,
+      "erros": 0
+    },
+    "6|LIVRO|APOCALIPSE": {
+      "idsRespondidos": [],
+      "acertos": 0,
+      "erros": 0
+    }
+  }
+}

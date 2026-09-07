@@ -1,0 +1,15 @@
+{
+  "porChave": {
+    "2|LIVRO|GÊNESIS": {
+      "idsRespondidos": [
+        1088,
+        1084,
+        1085,
+        1086,
+        1087
+      ],
+      "acertos": 15,
+      "erros": 10
+    }
+  }
+}

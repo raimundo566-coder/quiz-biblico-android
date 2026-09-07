@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.QuizBiblico" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_pergaminho_janela</item>
+        <item name="colorPrimary">@color/qb_azul_botao</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.QuizBiblico.Dialogo</item>
+    </style>
+</resources>
