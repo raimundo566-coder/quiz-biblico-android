@@ -3,6 +3,8 @@ package com.quizbiblico;
 import android.animation.AnimatorInflater;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.text.SpannableString;
+import android.text.style.RelativeSizeSpan;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import com.quizbiblico.modelo.Nivel;
 import com.quizbiblico.modelo.TipoFiltro;
 import com.quizbiblico.solo.Partida;
 import com.quizbiblico.solo.SoloService;
+
 
 public class NiveisActivity extends TelaBase {
 
@@ -44,12 +47,21 @@ public class NiveisActivity extends TelaBase {
 
             boolean liberado = solo.podeJogar(nivel.getCodigo());
             int restam = solo.restantes(nivel.getCodigo(), tipo, valor);
-            String cadeado = liberado ? "" : "[BLOQUEADO] ";
+            String cadeado = liberado ? "" : " [BLOQUEADO]";
 
-            botaoNivel.setText(cadeado + nivel.getCodigo() + " - " + nivel.getRotulo());
+            String textoCompleto = nivel.getCodigo() + " - " + nivel.getRotulo() + cadeado;
+            SpannableString textoComTamanhos = new SpannableString(textoCompleto);
+            textoComTamanhos.setSpan(new RelativeSizeSpan(0.6f), textoCompleto.length() - cadeado.length(), textoCompleto.length(), 0);
+            botaoNivel.setText(textoComTamanhos);
             botaoNivel.setBackgroundResource(R.drawable.botao_couro);
             botaoNivel.setTextColor(ContextCompat.getColor(this, R.color.qb_dourado));
             botaoNivel.setAllCaps(false);
+            botaoNivel.setBackgroundResource(R.drawable.botao_couro);
+            botaoNivel.setTextColor(ContextCompat.getColor(this, R.color.qb_dourado));
+            botaoNivel.setAllCaps(false);
+            botaoNivel.setTextSize(17);
+            botaoNivel.setStateListAnimator(
+                    AnimatorInflater.loadStateListAnimator(this, R.animator.botao_pressionado));
             botaoNivel.setStateListAnimator(
                     AnimatorInflater.loadStateListAnimator(this, R.animator.botao_pressionado));
 

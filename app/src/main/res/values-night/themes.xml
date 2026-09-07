@@ -3,5 +3,7 @@
         <item name="android:windowBackground">@drawable/bg_pergaminho_janela</item>
         <item name="colorPrimary">@color/qb_azul_botao</item>
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.QuizBiblico.Dialogo</item>
+        <item name="android:textColorPrimary">@color/qb_texto_claro</item>
+        <item name="android:textColorSecondary">@color/qb_texto_claro</item>
     </style>
 </resources>
