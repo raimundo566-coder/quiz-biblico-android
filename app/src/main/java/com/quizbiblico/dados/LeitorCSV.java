@@ -9,12 +9,7 @@ import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.IOException;
 import java.io.Reader;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class LeitorCSV {
@@ -63,35 +58,6 @@ public class LeitorCSV {
         }
 
         return perguntas;
-    }
-
-    public List<Pergunta> carregar(String caminho) throws IOException {
-        Path arquivo = Path.of(caminho);
-        if (!Files.exists(arquivo)) {
-            throw new IOException("Não achei o arquivo: " + arquivo.toAbsolutePath());
-        }
-        Reader leitorDeTexto = Files.newBufferedReader(arquivo, StandardCharsets.UTF_8);
-        return carregar(leitorDeTexto, caminho);
-    }
-
-    public List<Pergunta> carregarPasta(String caminhoPasta) throws IOException {
-        List<Path> arquivos = new ArrayList<>();
-        Path pasta = Path.of(caminhoPasta);
-
-        try (DirectoryStream<Path> conteudo = Files.newDirectoryStream(pasta, "*.csv")) {
-            for (Path arquivo : conteudo) {
-                arquivos.add(arquivo);
-            }
-        }
-
-        Collections.sort(arquivos);
-
-        List<Pergunta> todas = new ArrayList<>();
-        for (Path arquivo : arquivos) {
-            todas.addAll(carregar(arquivo.toString()));
-        }
-
-        return todas;
     }
 
     private Pergunta montar(String[] c) {

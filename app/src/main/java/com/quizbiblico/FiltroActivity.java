@@ -17,18 +17,18 @@ public class FiltroActivity extends TelaBase {
         Button botaoGeral = findViewById(R.id.botaoGeral);
         Button botaoVoltar = findViewById(R.id.botaoVoltar);
 
-        botaoPorLivro.setOnClickListener(v ->
-                startActivity(new Intent(this, LivrosActivity.class)));
+        botaoPorLivro.setOnClickListener(comSom(v ->
+                startActivity(new Intent(this, LivrosActivity.class))));
 
-        botaoPorTestamento.setOnClickListener(v ->
-                startActivity(new Intent(this, TestamentoActivity.class)));
+        botaoPorTestamento.setOnClickListener(comSom(v ->
+                startActivity(new Intent(this, TestamentoActivity.class))));
 
-        botaoGeral.setOnClickListener(v -> {
+        botaoGeral.setOnClickListener(comSom(v -> {
             Intent intent = new Intent(this, NiveisActivity.class);
             intent.putExtra("tipo", "GERAL");
             startActivity(intent);
-        });
+        }));
 
-        botaoVoltar.setOnClickListener(v -> finish());
+        botaoVoltar.setOnClickListener(comSom(v -> finish()));
     }
 }

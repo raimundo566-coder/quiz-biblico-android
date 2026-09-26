@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.quizbiblico.modelo.TipoFiltro;
 import com.quizbiblico.solo.Partida;
 import com.quizbiblico.solo.SoloService;
+import java.util.Locale;
 
 public class ResultadoActivity extends TelaBase {
 
@@ -31,10 +32,10 @@ public class ResultadoActivity extends TelaBase {
 
         TextView textoResumo = findViewById(R.id.textoResumo);
         textoResumo.setText("Voce acertou " + acertos + " de " + total
-                + "\n(" + String.format("%.0f", percentual) + "%)");
+                + "\n(" + String.format(Locale.US, "%.0f", percentual) + "%)");
 
         Button botaoJogarNovamente = findViewById(R.id.botaoJogarNovamente);
-        botaoJogarNovamente.setOnClickListener(v -> {
+        botaoJogarNovamente.setOnClickListener(comSom(v -> {
             SoloService solo = app().getSolo();
             try {
                 Partida partida = solo.iniciar(nivel, tipo, valor);
@@ -44,9 +45,9 @@ public class ResultadoActivity extends TelaBase {
             } catch (IllegalStateException e) {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
             }
-        });
+        }));
 
         Button botaoVoltar = findViewById(R.id.botaoVoltarResultado);
-        botaoVoltar.setOnClickListener(v -> finish());
+        botaoVoltar.setOnClickListener(comSom(v -> finish()));
     }
 }

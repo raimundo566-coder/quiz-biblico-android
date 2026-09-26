@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,20 +11,23 @@
         android:padding="24dp">
 
         <TextView
+            android:id="@+id/textoTituloNiveisVip"
+            style="@style/Widget.QuizBiblico.Titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Niveis e VIP"
-            android:textSize="22sp"
-            android:layout_marginBottom="16dp" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:text="Seja VIP"
+            android:textSize="30sp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/botaoTornarVip"
+            style="@style/Widget.QuizBiblico.Botao"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tornar-se VIP - R$ 9,90 (libera tudo)"
-            android:backgroundTint="#FFFFFFFF"
-            android:textColor="#FF000000"
-            android:layout_marginBottom="24dp" />
+            android:layout_height="71dp"
+            android:layout_marginBottom="21dp"
+            android:text="Ser VIP - R$ 9,90 (libera tudo)"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:id="@+id/containerNiveisVip"
@@ -32,13 +36,13 @@
             android:orientation="vertical"
             android:layout_marginBottom="24dp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/botaoVoltarNiveisVip"
+            style="@style/Widget.QuizBiblico.Botao"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="Voltar"
-            android:backgroundTint="#FFFFFFFF"
-            android:textColor="#FF000000" />
+            android:textSize="23sp" />
 
     </LinearLayout>
 </ScrollView>

@@ -24,6 +24,7 @@ public class JogoActivity extends TelaBase {
 
     private TextView textoProgresso;
     private TextView textoPergunta;
+    private TextView textoReferencia;
     private Button[] botoesAlternativa;
     private Button botaoProxima;
 
@@ -46,6 +47,7 @@ public class JogoActivity extends TelaBase {
 
         textoProgresso = findViewById(R.id.textoProgresso);
         textoPergunta = findViewById(R.id.textoPergunta);
+        textoReferencia = findViewById(R.id.textoReferencia);
         botaoProxima = findViewById(R.id.botaoProxima);
 
         botoesAlternativa = new Button[]{
@@ -60,10 +62,10 @@ public class JogoActivity extends TelaBase {
             botoesAlternativa[i].setOnClickListener(v -> responder(indice));
         }
 
-        botaoProxima.setOnClickListener(v -> avancar());
+        botaoProxima.setOnClickListener(comSom(v -> avancar()));
 
         Button botaoSair = findViewById(R.id.botaoSairJogo);
-        botaoSair.setOnClickListener(v -> confirmarSaida());
+        botaoSair.setOnClickListener(comSom(v -> confirmarSaida()));
 
         mostrarPerguntaAtual();
     }
@@ -87,6 +89,7 @@ public class JogoActivity extends TelaBase {
         textoProgresso.setText("Pergunta " + partida.getNumeroAtual() + " de " + partida.getTotal()
                 + "  |  Acertos: " + partida.getAcertos());
         textoPergunta.setText(pergunta.getTexto());
+        textoReferencia.setVisibility(View.GONE);
 
         String[] alternativas = pergunta.getAlternativas();
         for (int i = 0; i < botoesAlternativa.length; i++) {
@@ -107,6 +110,12 @@ public class JogoActivity extends TelaBase {
         perguntaRespondida = partida.atual();
         boolean acertou = solo.responder(partida, indice);
 
+        if (acertou) {
+            app().getSom().tocarAcerto();
+        } else {
+            app().getSom().tocarErro();
+        }
+
         for (Button botao : botoesAlternativa) {
             botao.setEnabled(false);
         }
@@ -117,6 +126,9 @@ public class JogoActivity extends TelaBase {
         if (!acertou) {
             botoesAlternativa[indice].setBackgroundTintList(ColorStateList.valueOf(VERMELHO));
         }
+
+        textoReferencia.setText(perguntaRespondida.getReferencia());
+        textoReferencia.setVisibility(View.VISIBLE);
 
         botaoProxima.setVisibility(View.VISIBLE);
     }

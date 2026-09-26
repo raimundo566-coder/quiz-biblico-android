@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Quiz Biblico</string>
+    <string name="titulo_seja_vip">Seja VIP</string>
+    <!-- texto do botão de compra do VIP -->
+    <string name="botao_tornar_vip">Tornar-se VIP - R$ 9,90 (libera tudo)</string>
+    <string name="botao_voltar">Voltar</string>
 </resources>

@@ -20,6 +20,8 @@ public class MainActivity extends TelaBase {
         Button botaoNiveis = findViewById(R.id.botaoNiveis);
         Button botaoSair = findViewById(R.id.botaoSair);
 
+        app().getSom().tocarAbertura();
+
         if (app().getErroDeCarregamento() != null) {
             textoStatus.setText("Falhou: " + app().getErroDeCarregamento());
         } else {
@@ -27,15 +29,15 @@ public class MainActivity extends TelaBase {
                     + app().getBanco().livrosDisponiveis().size() + " livros carregados");
         }
 
-        botaoSolo.setOnClickListener(v ->
-                startActivity(new Intent(this, FiltroActivity.class)));
+        botaoSolo.setOnClickListener(comSom(v ->
+                startActivity(new Intent(this, FiltroActivity.class))));
 
-        botaoGincana.setOnClickListener(v ->
-                Toast.makeText(this, "Em breve!", Toast.LENGTH_SHORT).show());
+        botaoGincana.setOnClickListener(comSom(v ->
+                Toast.makeText(this, "Em breve!", Toast.LENGTH_SHORT).show()));
 
-        botaoNiveis.setOnClickListener(v ->
-                startActivity(new Intent(this, NiveisVipActivity.class)));
+        botaoNiveis.setOnClickListener(comSom(v ->
+                startActivity(new Intent(this, NiveisVipActivity.class))));
 
-        botaoSair.setOnClickListener(v -> finish());
+        botaoSair.setOnClickListener(comSom(v -> finish()));
     }
 }

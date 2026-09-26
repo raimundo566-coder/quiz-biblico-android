@@ -27,11 +27,11 @@ public class NiveisVipActivity extends TelaBase {
         container = findViewById(R.id.containerNiveisVip);
         botaoVip = findViewById(R.id.botaoTornarVip);
 
-        botaoVip.setOnClickListener(v ->
-                Toast.makeText(this, "Em breve: compra dentro do app.", Toast.LENGTH_SHORT).show());
+        botaoVip.setOnClickListener(comSom(v ->
+                Toast.makeText(this, "Em breve: compra dentro do app.", Toast.LENGTH_SHORT).show()));
 
         Button botaoVoltar = findViewById(R.id.botaoVoltarNiveisVip);
-        botaoVoltar.setOnClickListener(v -> finish());
+        botaoVoltar.setOnClickListener(comSom(v -> finish()));
 
         montarLista();
     }
@@ -61,8 +61,8 @@ public class NiveisVipActivity extends TelaBase {
                 botaoComprar.setText("Desbloquear " + nivel.getRotulo());
                 botaoComprar.setBackgroundTintList(ColorStateList.valueOf(0xFFFFFFFF));
                 botaoComprar.setTextColor(0xFF000000);
-                botaoComprar.setOnClickListener(v ->
-                        Toast.makeText(this, "Em breve: compra dentro do app.", Toast.LENGTH_SHORT).show());
+                botaoComprar.setOnClickListener(comSom(v ->
+                        Toast.makeText(this, "Em breve: compra dentro do app.", Toast.LENGTH_SHORT).show()));
                 container.addView(botaoComprar);
             }
         }

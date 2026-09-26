@@ -70,7 +70,7 @@ public class NiveisActivity extends TelaBase {
             parametros.bottomMargin = margemBaixo;
             botaoNivel.setLayoutParams(parametros);
 
-            botaoNivel.setOnClickListener(v -> {
+            botaoNivel.setOnClickListener(comSom(v -> {
                 try {
                     Partida partida = solo.iniciar(nivel.getCodigo(), tipo, valor);
                     app().setPartidaAtual(partida);
@@ -78,12 +78,12 @@ public class NiveisActivity extends TelaBase {
                 } catch (IllegalStateException e) {
                     Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
-            });
+            }));
 
             container.addView(botaoNivel);
         }
 
         AppCompatButton botaoVoltar = findViewById(R.id.botaoVoltarNiveis);
-        botaoVoltar.setOnClickListener(v -> finish());
+        botaoVoltar.setOnClickListener(comSom(v -> finish()));
     }
 }

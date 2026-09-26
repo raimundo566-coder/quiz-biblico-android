@@ -2,6 +2,7 @@ package com.quizbiblico;
 
 import android.app.Application;
 
+import com.quizbiblico.audio.TocadorDeSom;
 import com.quizbiblico.dados.BancoDePerguntas;
 import com.quizbiblico.modelo.Pergunta;
 import com.quizbiblico.modelo.PersistenciaUsuario;
@@ -24,10 +25,13 @@ public class QuizBiblicoApp extends Application {
     private SoloService solo;
     private String erroDeCarregamento;
     private Partida partidaAtual;
+    private TocadorDeSom som;
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        som = new TocadorDeSom(this);
 
         try {
             List<Pergunta> perguntas = CarregadorDeAcervo.carregarTudo(this);
@@ -65,6 +69,7 @@ public class QuizBiblicoApp extends Application {
     public Usuario getUsuario() { return usuario; }
     public SoloService getSolo() { return solo; }
     public String getErroDeCarregamento() { return erroDeCarregamento; }
+    public TocadorDeSom getSom() { return som; }
 
     public Partida getPartidaAtual() { return partidaAtual; }
     public void setPartidaAtual(Partida partidaAtual) { this.partidaAtual = partidaAtual; }

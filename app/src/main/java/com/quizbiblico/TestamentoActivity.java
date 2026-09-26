@@ -15,9 +15,9 @@ public class TestamentoActivity extends TelaBase {
         Button botaoNT = findViewById(R.id.botaoNT);
         Button botaoVoltar = findViewById(R.id.botaoVoltarTestamento);
 
-        botaoAT.setOnClickListener(v -> abrirNiveis("AT"));
-        botaoNT.setOnClickListener(v -> abrirNiveis("NT"));
-        botaoVoltar.setOnClickListener(v -> finish());
+        botaoAT.setOnClickListener(comSom(v -> abrirNiveis("AT")));
+        botaoNT.setOnClickListener(comSom(v -> abrirNiveis("NT")));
+        botaoVoltar.setOnClickListener(comSom(v -> finish()));
     }
 
     private void abrirNiveis(String testamento) {

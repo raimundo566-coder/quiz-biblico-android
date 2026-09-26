@@ -4,18 +4,21 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 public class PersistenciaProgresso {
 
     private static final String CAMINHO_PADRAO = "dados/progresso.json";
 
-    private final Path arquivo;
+    private final File arquivo;
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     public PersistenciaProgresso() {
@@ -23,34 +26,37 @@ public class PersistenciaProgresso {
     }
 
     public PersistenciaProgresso(String caminho) {
-        this.arquivo = Path.of(caminho);
+        this.arquivo = new File(caminho);
     }
 
     public void salvar(Progresso progresso) throws IOException {
-        Path pasta = arquivo.getParent();
+        File pasta = arquivo.getParentFile();
         if (pasta != null) {
-            Files.createDirectories(pasta);
+            pasta.mkdirs();   // cria a pasta se faltar; se ja existe, nao faz nada
         }
 
-        try (Writer escritor = Files.newBufferedWriter(arquivo, StandardCharsets.UTF_8)) {
+        // OutputStreamWriter com UTF_8 e o que garante que os acentos sejam gravados certo
+        try (Writer escritor = new OutputStreamWriter(
+                new FileOutputStream(arquivo), StandardCharsets.UTF_8)) {
             gson.toJson(progresso, escritor);
         }
     }
 
     public Progresso carregar() throws IOException {
-        if (!Files.exists(arquivo)) {
+        if (!arquivo.exists()) {
             return new Progresso();
         }
 
-        try (Reader leitor = Files.newBufferedReader(arquivo, StandardCharsets.UTF_8)) {
+        try (Reader leitor = new InputStreamReader(
+                new FileInputStream(arquivo), StandardCharsets.UTF_8)) {
             Progresso lido = gson.fromJson(leitor, Progresso.class);
             return (lido == null) ? new Progresso() : lido;
         } catch (JsonSyntaxException e) {
-            throw new IOException("Progresso corrompido: " + arquivo.toAbsolutePath(), e);
+            throw new IOException("Progresso corrompido: " + arquivo.getAbsolutePath(), e);
         }
     }
 
-    public Path getArquivo() {
+    public File getArquivo() {
         return arquivo;
     }
 }
