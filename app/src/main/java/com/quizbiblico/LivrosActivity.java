@@ -18,7 +18,7 @@ public class LivrosActivity extends TelaBase {
         List<String> livros = app().getBanco().livrosDisponiveis();
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<>(
-                this, android.R.layout.simple_list_item_1, livros);
+                this, R.layout.linha_livro, R.id.textoLivro, livros);
         listaLivros.setAdapter(adaptador);
 
         listaLivros.setOnItemClickListener((parent, view, posicao, id) -> {

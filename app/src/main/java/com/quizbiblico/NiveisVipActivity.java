@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
+
 import com.quizbiblico.modelo.Nivel;
 import com.quizbiblico.modelo.Usuario;
 
@@ -42,6 +44,7 @@ public class NiveisVipActivity extends TelaBase {
         for (Nivel nivel : Nivel.values()) {
             TextView linha = new TextView(this);
             linha.setTextSize(16f);
+            linha.setTextColor(ContextCompat.getColor(this, R.color.qb_texto_claro));
             linha.setPadding(0, 24, 0, 24);
 
             String status;

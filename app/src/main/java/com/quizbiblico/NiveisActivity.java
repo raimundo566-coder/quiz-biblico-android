@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 import com.quizbiblico.modelo.Nivel;
 import com.quizbiblico.modelo.TipoFiltro;
 import com.quizbiblico.solo.Partida;
@@ -71,6 +73,11 @@ public class NiveisActivity extends TelaBase {
             botaoNivel.setLayoutParams(parametros);
 
             botaoNivel.setOnClickListener(comSom(v -> {
+                if (solo.podeJogar(nivel.getCodigo())
+                        && solo.restantes(nivel.getCodigo(), tipo, valor) == 0) {
+                    confirmarZerar(nivel);
+                    return;
+                }
                 try {
                     Partida partida = solo.iniciar(nivel.getCodigo(), tipo, valor);
                     app().setPartidaAtual(partida);
@@ -85,5 +92,21 @@ public class NiveisActivity extends TelaBase {
 
         AppCompatButton botaoVoltar = findViewById(R.id.botaoVoltarNiveis);
         botaoVoltar.setOnClickListener(comSom(v -> finish()));
+    }
+
+    private void confirmarZerar(Nivel nivel) {
+        new MaterialAlertDialogBuilder(this)
+                .setTitle("Recomeçar o nível " + nivel.getRotulo() + "?")
+                .setMessage("Você já respondeu todas as perguntas deste nível aqui. "
+                        + "Para jogar de novo, o progresso dele será zerado. "
+                        + "Os outros níveis e livros não mudam.")
+                .setPositiveButton("Zerar", (dialog, which) -> {
+                    app().getSolo().zerar(nivel.getCodigo(), tipo, valor);
+                    app().salvar();
+                    Toast.makeText(this, "Progresso zerado. Toque no nível para jogar.",
+                            Toast.LENGTH_SHORT).show();
+                })
+                .setNegativeButton("Cancelar", null)
+                .show();
     }
 }

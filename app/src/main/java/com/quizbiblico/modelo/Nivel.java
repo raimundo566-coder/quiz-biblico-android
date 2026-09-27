@@ -1,7 +1,7 @@
 package com.quizbiblico.modelo;
 
 public enum Nivel {
-    FACIL (1, "Fácil (kids)", true),
+    FACIL (1, "Fácil", true),
     BASICO (2, "Básico", true),
     INTERMEDIARIA (3, "Intermediário", false),
     DIFICIL (4, "Difícil", false),

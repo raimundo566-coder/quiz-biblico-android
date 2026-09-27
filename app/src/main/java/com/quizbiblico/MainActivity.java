@@ -25,8 +25,7 @@ public class MainActivity extends TelaBase {
         if (app().getErroDeCarregamento() != null) {
             textoStatus.setText("Falhou: " + app().getErroDeCarregamento());
         } else {
-            textoStatus.setText(app().getBanco().total() + " perguntas, "
-                    + app().getBanco().livrosDisponiveis().size() + " livros carregados");
+            textoStatus.setText(app().getBanco().total() + " perguntas carregadas");
         }
 
         botaoSolo.setOnClickListener(comSom(v ->

@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.quizbiblico"
+        applicationId = "br.com.raimundogalvao.quizbiblico"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
