@@ -46,14 +46,14 @@ public class SoloService {
     public Partida iniciar(int nivel, TipoFiltro tipo, String valor) {
         if (!podeJogar(nivel)) {
             throw new IllegalStateException(
-                    "Nivel bloqueado: " + Nivel.porCodigo(nivel).getRotulo());
+                    "Nível bloqueado: " + Nivel.porCodigo(nivel).getRotulo());
         }
 
         List<Pergunta> restantes = disponiveis(nivel, tipo, valor);
 
         if (restantes.isEmpty()) {
             throw new IllegalStateException(
-                    "Voce ja respondeu todas as perguntas deste filtro. Zere para recomecar.");
+                    "Você já respondeu todas as perguntas deste nível. Volte aos níveis e toque nele para recomeçar.");
         }
 
         Collections.shuffle(restantes);

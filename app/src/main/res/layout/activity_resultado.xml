@@ -27,7 +27,7 @@
         android:id="@+id/botaoVoltarResultado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Voltar aos niveis"
+        android:text="Voltar aos níveis"
         android:backgroundTint="#FFFFFFFF"
         android:textColor="#FF000000" />
 

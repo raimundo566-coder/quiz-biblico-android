@@ -49,7 +49,7 @@ public class NiveisVipActivity extends TelaBase {
 
             String status;
             if (nivel.isGratuito()) {
-                status = "Gratis";
+                status = "Grátis";
             } else if (usuario.temAcessoAoNivel(nivel)) {
                 status = "Liberado";
             } else {

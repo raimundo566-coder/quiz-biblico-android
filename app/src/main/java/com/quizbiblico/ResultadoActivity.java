@@ -31,7 +31,7 @@ public class ResultadoActivity extends TelaBase {
         valor = getIntent().getStringExtra("valor");
 
         TextView textoResumo = findViewById(R.id.textoResumo);
-        textoResumo.setText("Voce acertou " + acertos + " de " + total
+        textoResumo.setText("Você acertou " + acertos + " de " + total
                 + "\n(" + String.format(Locale.US, "%.0f", percentual) + "%)");
 
         Button botaoJogarNovamente = findViewById(R.id.botaoJogarNovamente);

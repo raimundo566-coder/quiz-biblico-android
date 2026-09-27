@@ -36,7 +36,7 @@ public class NiveisActivity extends TelaBase {
         valor = getIntent().getStringExtra("valor");
 
         TextView textoTitulo = findViewById(R.id.textoTituloNiveis);
-        textoTitulo.setText(tipo == TipoFiltro.GERAL ? "Niveis (Geral)" : "Niveis (" + valor + ")");
+        textoTitulo.setText(tipo == TipoFiltro.GERAL ? "Níveis (Geral)" : "Níveis (" + valor + ")");
 
         LinearLayout container = findViewById(R.id.containerNiveis);
         SoloService solo = app().getSolo();

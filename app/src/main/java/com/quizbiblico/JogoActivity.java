@@ -73,7 +73,7 @@ public class JogoActivity extends TelaBase {
     private void confirmarSaida() {
         new MaterialAlertDialogBuilder(this)
                 .setTitle("Sair da partida?")
-                .setMessage("As perguntas ja respondidas ficam salvas no seu progresso. So a partida atual sera encerrada.")
+                .setMessage("As perguntas já respondidas ficam salvas no seu progresso. Só a partida atual será encerrada.")
                 .setPositiveButton("Sair", (dialog, which) -> {
                     app().setPartidaAtual(null);
                     finish();

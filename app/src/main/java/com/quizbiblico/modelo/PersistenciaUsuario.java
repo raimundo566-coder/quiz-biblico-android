@@ -52,7 +52,7 @@ public class PersistenciaUsuario {
             Usuario lido = gson.fromJson(leitor, Usuario.class);
             return (lido == null) ? new Usuario() : lido;
         } catch (JsonSyntaxException e) {
-            throw new IOException("Usuario corrompido: " + arquivo.getAbsolutePath(), e);
+            throw new IOException("Usuário corrompido: " + arquivo.getAbsolutePath(), e);
         }
     }
 
