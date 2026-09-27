@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_alternativa"
             android:textColor="#FF2B1E0E"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="12dp" />
 
         <Button
             android:id="@+id/botaoB"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_alternativa"
             android:textColor="#FF2B1E0E"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="12dp" />
 
         <Button
             android:id="@+id/botaoC"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_alternativa"
             android:textColor="#FF2B1E0E"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="12dp" />
 
         <Button
             android:id="@+id/botaoD"

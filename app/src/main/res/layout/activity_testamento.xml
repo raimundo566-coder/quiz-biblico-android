@@ -8,8 +8,8 @@
 
     <TextView
         style="@style/Widget.QuizBiblico.Titulo"
-        android:layout_width="297dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:text="Escolha o testamento"
         android:textSize="30sp" />
@@ -17,7 +17,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botaoAT"
         style="@style/Widget.QuizBiblico.Botao"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="107dp"
         android:layout_marginBottom="2dp"
         android:textSize="20sp"
@@ -26,7 +26,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botaoNT"
         style="@style/Widget.QuizBiblico.Botao"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="105dp"
         android:layout_marginBottom="12dp"
         android:textSize="20sp"
@@ -35,7 +35,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botaoVoltarTestamento"
         style="@style/Widget.QuizBiblico.Botao"
-        android:layout_width="400dp"
+        android:layout_width="match_parent"
         android:layout_height="113dp"
         android:textSize="20sp"
         android:text="Voltar" />

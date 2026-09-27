@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
+
 import com.quizbiblico.modelo.Pergunta;
 import com.quizbiblico.solo.Partida;
 import com.quizbiblico.solo.SoloService;
@@ -66,6 +68,13 @@ public class JogoActivity extends TelaBase {
 
         Button botaoSair = findViewById(R.id.botaoSairJogo);
         botaoSair.setOnClickListener(comSom(v -> confirmarSaida()));
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                confirmarSaida();
+            }
+        });
 
         mostrarPerguntaAtual();
     }

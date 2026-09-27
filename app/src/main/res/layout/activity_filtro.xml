@@ -8,8 +8,8 @@
 
     <TextView
         style="@style/Widget.QuizBiblico.Titulo"
-        android:layout_width="177dp"
-        android:layout_height="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="35dp"
         android:text="MODO SOLO"
         android:textSize="30sp" />
@@ -17,7 +17,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botaoPorLivro"
         style="@style/Widget.QuizBiblico.Botao"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="94dp"
         android:layout_marginBottom="12dp"
         android:text="Por livro"
@@ -26,7 +26,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botaoPorTestamento"
         style="@style/Widget.QuizBiblico.Botao"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="96dp"
         android:layout_marginBottom="12dp"
         android:textSize="20sp"
@@ -36,7 +36,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botaoGeral"
         style="@style/Widget.QuizBiblico.Botao"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="90dp"
         android:layout_marginBottom="12dp"
         android:text="Geral (a Bíblia toda)"
@@ -45,7 +45,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/botaoVoltar"
         style="@style/Widget.QuizBiblico.Botao"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="84dp"
         android:text="Voltar"
         android:textSize="20sp"/>
