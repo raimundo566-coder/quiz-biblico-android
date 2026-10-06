@@ -47,5 +47,6 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation("com.opencsv:opencsv:5.9")
     implementation("com.google.code.gson:gson:2.11.0")
+    implementation("com.android.billingclient:billing:8.0.0")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 }
