@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.quizbiblico.audio.TocadorDeSom;
 import com.quizbiblico.dados.BancoDePerguntas;
+import com.quizbiblico.loja.Loja;
 import com.quizbiblico.modelo.Pergunta;
 import com.quizbiblico.modelo.PersistenciaUsuario;
 import com.quizbiblico.modelo.Usuario;
@@ -26,6 +27,7 @@ public class QuizBiblicoApp extends Application {
     private String erroDeCarregamento;
     private Partida partidaAtual;
     private TocadorDeSom som;
+    private Loja loja;
 
     @Override
     public void onCreate() {
@@ -46,6 +48,9 @@ public class QuizBiblicoApp extends Application {
             usuario = arquivistaUsuario.carregar();
 
             solo = new SoloService(banco, progresso, usuario);
+
+            loja = new Loja(this, usuario, this::salvar);
+            loja.conectar();
 
         } catch (IOException e) {
             erroDeCarregamento = e.getMessage();
@@ -70,6 +75,7 @@ public class QuizBiblicoApp extends Application {
     public SoloService getSolo() { return solo; }
     public String getErroDeCarregamento() { return erroDeCarregamento; }
     public TocadorDeSom getSom() { return som; }
+    public Loja getLoja() { return loja; }
 
     public Partida getPartidaAtual() { return partidaAtual; }
     public void setPartidaAtual(Partida partidaAtual) { this.partidaAtual = partidaAtual; }

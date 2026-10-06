@@ -73,8 +73,11 @@ public class NiveisActivity extends TelaBase {
             botaoNivel.setLayoutParams(parametros);
 
             botaoNivel.setOnClickListener(comSom(v -> {
-                if (solo.podeJogar(nivel.getCodigo())
-                        && solo.restantes(nivel.getCodigo(), tipo, valor) == 0) {
+                if (!solo.podeJogar(nivel.getCodigo())) {
+                    startActivity(new Intent(this, NiveisVipActivity.class));
+                    return;
+                }
+                if (solo.restantes(nivel.getCodigo(), tipo, valor) == 0) {
                     confirmarZerar(nivel);
                     return;
                 }
@@ -92,6 +95,12 @@ public class NiveisActivity extends TelaBase {
 
         AppCompatButton botaoVoltar = findViewById(R.id.botaoVoltarNiveis);
         botaoVoltar.setOnClickListener(comSom(v -> finish()));
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
     }
 
     private void confirmarZerar(Nivel nivel) {
